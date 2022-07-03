@@ -1,0 +1,22 @@
+<h1>映画一覧</h1>
+
+<div class="card-group">
+  <% @movies.each do |movie| %>
+    <div class="card">
+      <div>
+        <%= image_tag("https://picsum.photos/id/100#{movie.id}/400/200") %>
+      </div>
+      <div class="card__textbox">
+        <div class="card__titletext">
+          <%= movie.name %>
+        </div>
+        <div class="card__overviewtext">
+          <%= movie.year %>年公開
+        </div>
+        <div class="card__overviewtext">
+          <%= movie.description %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

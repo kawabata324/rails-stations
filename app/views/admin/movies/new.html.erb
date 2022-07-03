@@ -1,0 +1,69 @@
+<%= render 'admin/movies/header' %>
+<div class="admin__layout">
+  <%= render 'admin/movies/side' %>
+  <div class="content">
+    <div class="content">
+      <h1>映画登録</h1>
+      <%= form_with model: @movie, url: admin_movies_path, class: "form" do |f| %>
+        <% flash.each do |message_type, message| %>
+          <%= message %>
+        <% end %>
+        <div class="form_elements">
+          <!-- 映画タイトル name-->
+          <div class="form_element">
+            <%= f.label :name, "映画タイトル" %>
+            <div class="width__eight">
+              <%= f.text_field :name, class: "input" %>
+              <% @movie.errors.full_messages_for(:name).each do |message| %>
+                <div class="error_message"><%= message %></div>
+              <% end %>
+            </div>
+          </div>
+          <!-- 公開年 year-->
+          <div class="form_element">
+            <%= f.label :year, "公開年" %>
+            <div class="width__eight">
+              <%= f.number_field :year, class: "input" %>
+              <% @movie.errors.full_messages_for(:year).each do |message| %>
+                <div class="error_message"><%= message %></div>
+              <% end %>
+            </div>
+          </div>
+          <!--上映中か is_showing-->
+          <div class="form_element">
+            <%= f.label :is_showing, "上映中か" %>
+            <%= f.check_box :is_showing %>
+            <% @movie.errors.full_messages_for(:is_showing).each do |message| %>
+              <div class="error_message"><%= message %></div>
+            <% end %>
+          </div>
+          <!--概要 description-->
+          <div class="form_element">
+            <%= f.label :description, "概要" %>
+            <div class="width__eight">
+              <%= f.text_area :description, class: "input" %>
+              <% @movie.errors.full_messages_for(:description).each do |message| %>
+                <div class="error_message"><%= message %></div>
+              <% end %>
+            </div>
+          </div>
+          <!-- 画像URL image_url-->
+          <div class="form_element">
+            <%= f.label :image_url, "画像URL" %>
+            <div class="width__eight">
+              <%= f.url_field :image_url, class: "input" %>
+              <% @movie.errors.full_messages_for(:image_url).each do |message| %>
+                <div class="error_message"><%= message %></div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <!--ボタン関連-->
+        <div class="btn_element">
+          <%= f.button "Close", class: "cancel_btn" %>
+          <%= f.submit "Save", class: "save_btn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

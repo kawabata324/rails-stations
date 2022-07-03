@@ -1,0 +1,94 @@
+// Place all the styles related to the Admin::Movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.header {
+  border: 1px solid black;
+  padding: 30px;
+}
+
+.side {
+  flex-basis: 15%;
+  border: 1px solid black;
+  background-color: gray;
+}
+
+.content {
+  flex-basis: 85%;
+}
+
+.admin__layout {
+  display: flex;
+  margin-top: 15px;
+  height: 800px;
+  gap: 20px;
+}
+
+.side__btn {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.side__btn__active {
+  background-color: #EFEFEF;
+}
+
+th,
+td {
+  border: 1px solid #333;
+  padding: 10px;
+  text-align: center;
+}
+
+thead,
+tfoot {
+  background-color: cornflowerblue;
+  color: #fff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form_elements {
+  background-color: #bbbbbb;
+  padding: 20px;
+}
+
+.save_btn {
+  background-color: blue;
+  color: white;
+}
+
+.cancel_btn {
+  background-color: #2E2F30;
+  color: white;
+}
+
+.form_element {
+  display: flex;
+  padding: 10px;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.width__eight {
+  width: 80%;
+}
+
+.input {
+  width: 100%;
+}
+
+.btn_element {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+}
+
+.error_message{
+  color: red;
+}

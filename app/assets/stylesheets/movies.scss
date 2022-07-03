@@ -1,0 +1,49 @@
+// Place all the styles related to the Movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.card-group {
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, .2)
+}
+
+.card__imgframe {
+  width: 100%;
+  height: auto;
+  padding-top: 56.25%;
+  background: #bbb;
+  box-sizing: border-box;
+}
+
+.card__textbox {
+  width: 100%;
+  height: auto;
+  padding: 20px 18px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.card__textbox > * + * {
+  margin-top: 10px;
+}
+
+.card__titletext {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 125%;
+}
+
+.card__overviewtext {
+  font-size: 12px;
+  line-height: 150%;
+}

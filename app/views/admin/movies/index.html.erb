@@ -1,0 +1,35 @@
+<%= render 'admin/movies/header' %>
+<div class="admin__layout">
+<%= render 'admin/movies/side' %>
+  <div class="content">
+    <h1>映画一覧</h1>
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>映画タイトル</th>
+        <th>公開年</th>
+        <th>上映中か</th>
+        <th>概要</th>
+        <th>画像URL</th>
+        <th>作成日</th>
+        <th>更新日時</th>
+      </tr>
+      <thead/>
+      <tbody>
+      <% @movies.each do |movie| %>
+        <tr>
+          <td><%= movie.id %></td>
+          <td><%= movie.name %></td>
+          <td><%= movie.year %></td>
+          <td><%= movie.is_showing === true ? "上映中" : "上映予定" %></td>
+          <td><%= movie.description.slice(0, 9) + "..." %></td>
+          <td><%= link_to(movie.image_url, movie.image_url) %></td>
+          <td><%= movie.created_at.in_time_zone('Tokyo').to_s.slice(0, 20) %></td>
+          <td><%= movie.updated_at.in_time_zone('Tokyo').to_s.slice(0, 20) %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
