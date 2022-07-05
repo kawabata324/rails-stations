@@ -60,6 +60,9 @@
         </div>
         <!--ボタン関連-->
         <div class="btn_element">
+          <%= link_to "Delete", admin_movie_path(@movie.id), method: :delete,
+                      data: { confirm: "【確認】削除してもよろしいですか？" },
+                      class: "delete_btn" %>
           <%= f.button "Close", class: "cancel_btn" %>
           <%= f.submit "Save Changes", class: "save_btn" %>
         </div>

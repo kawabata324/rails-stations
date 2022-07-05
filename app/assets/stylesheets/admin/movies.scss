@@ -68,6 +68,13 @@ tfoot {
   color: white;
 }
 
+.delete_btn {
+  background-color: red;
+  color: white;
+  text-decoration: none;
+  padding: 2px 5px;
+}
+
 .form_element {
   display: flex;
   padding: 10px;

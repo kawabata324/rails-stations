@@ -3,6 +3,9 @@
 <%= render 'admin/movies/side' %>
   <div class="content">
     <h1>映画一覧</h1>
+    <% flash.each do |message_type, message| %>
+      <%= message %>
+    <% end %>
     <table>
       <thead>
       <tr>
