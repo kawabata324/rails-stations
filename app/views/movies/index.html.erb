@@ -1,6 +1,6 @@
 <%= form_with url: movies_path, local: true, method: :get, class: "form" do |f| %>
   <div class="keyword">
-    <%= f.text_field :keyword, class: "input", value: "" %>
+    <%= f.text_field :keyword, class: "input", placeholder: "キーワードを検索する" %>
     <%= f.submit "検索", class: "save_btn" %>
   </div>
   <div class="radio_show">

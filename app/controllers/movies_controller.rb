@@ -1,8 +1,7 @@
 class MoviesController < ApplicationController
   def index
-
     @movies = if movie_params[:keyword].present?
-      Movie.where("name LIKE ?", "%#{movie_params[:keyword]}%")
+      Movie.where("name LIKE ?", "%#{movie_params[:keyword]}%") | Movie.where("description LIKE ?", "%#{movie_params[:keyword]}%")
     else
       Movie.all
     end
