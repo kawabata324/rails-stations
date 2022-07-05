@@ -1,10 +1,28 @@
-<h1>映画一覧</h1>
-
+<%= form_with url: movies_path, local: true, method: :get, class: "form" do |f| %>
+  <div class="keyword">
+    <%= f.text_field :keyword, class: "input", value: "" %>
+    <%= f.submit "検索", class: "save_btn" %>
+  </div>
+  <div class="radio_show">
+    <div>
+      <%= f.label :is_show_type, "全て" %>
+      <%= f.radio_button :is_show_type, "ALL", checked: true %>
+    </div>
+    <div>
+      <%= f.label :is_show_type, "公開" %>
+      <%= f.radio_button :is_show_type, 1 %>
+    </div>
+    <div>
+      <%= f.label :is_show_type, "非公開" %>
+      <%= f.radio_button :is_show_type, 0 %>
+    </div>
+  </div>
+<% end %>
 <div class="card-group">
   <% @movies.each do |movie| %>
     <div class="card">
       <div>
-        <%= image_tag("https://picsum.photos/id/100#{movie.id}/400/200") %>
+        <%= image_tag("https://picsum.photos/id/1#{movie.id}/400/200") %>
       </div>
       <div class="card__textbox">
         <div class="card__titletext">
