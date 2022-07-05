@@ -1,20 +1,20 @@
 <%= form_with url: movies_path, local: true, method: :get, class: "form" do |f| %>
   <div class="keyword">
-    <%= f.text_field :keyword, class: "input", placeholder: "キーワードを検索する" %>
+    <%= f.text_field :keyword, class: "input", value: params[:keyword], placeholder: "キーワードを検索する" %>
     <%= f.submit "検索", class: "save_btn" %>
   </div>
   <div class="radio_show">
     <div>
       <%= f.label :is_show_type, "全て" %>
-      <%= f.radio_button :is_show_type, "ALL", checked: true %>
+      <%= f.radio_button :is_show_type, "ALL", checked: params[:is_show_type] === "All" || params[:is_show_type].nil? %>
     </div>
     <div>
       <%= f.label :is_show_type, "公開" %>
-      <%= f.radio_button :is_show_type, 1 %>
+      <%= f.radio_button :is_show_type, 1, checked: params[:is_show_type] === "1" %>
     </div>
     <div>
       <%= f.label :is_show_type, "非公開" %>
-      <%= f.radio_button :is_show_type, 0 %>
+      <%= f.radio_button :is_show_type, 0, checked: params[:is_show_type] === "0" %>
     </div>
   </div>
 <% end %>
@@ -22,7 +22,7 @@
   <% @movies.each do |movie| %>
     <div class="card">
       <div>
-        <%= image_tag("https://picsum.photos/id/1#{movie.id}/400/200") %>
+        <%= image_tag("https://picsum.photos/id/100/400/200") %>
       </div>
       <div class="card__textbox">
         <div class="card__titletext">
