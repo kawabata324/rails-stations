@@ -8,7 +8,6 @@ class Admin::MoviesController < ApplicationController
   end
 
   def create
-    pp movie_params
     @movie = Movie.new(movie_params)
     if @movie.save
       flash[:success] = "映画を追加しました"

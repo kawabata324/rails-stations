@@ -4,7 +4,7 @@
   <div class="content">
     <div class="content">
       <h1>映画登録</h1>
-      <%= form_with model: @movie, url: admin_movies_path, class: "form" do |f| %>
+      <%= form_with scope: :movie, url: admin_movies_path, local: true, class: "form" do |f| %>
         <% flash.each do |message_type, message| %>
           <%= message %>
         <% end %>
