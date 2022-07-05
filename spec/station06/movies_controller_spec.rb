@@ -19,6 +19,7 @@ RSpec.describe MoviesController, type: :controller do
       end
 
       it 'HTMLの中にはmoviesテーブルのレコード数と同じ件数のデータがあること' do
+        put response.body
         expect(response.body).to include(@movies[0].name)
         expect(response.body).to include(@movies[1].name)
         expect(response.body).to include(@movies[2].name)
