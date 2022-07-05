@@ -19,7 +19,7 @@
       <tbody>
       <% @movies.each do |movie| %>
         <tr>
-          <td><%= movie.id %></td>
+          <td><%= link_to( movie.id, "/admin/movies/#{movie.id}/edit") %></td>
           <td><%= movie.name %></td>
           <td><%= movie.year %></td>
           <td><%= movie.is_showing === true ? "上映中" : "上映予定" %></td>
