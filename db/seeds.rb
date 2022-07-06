@@ -17,12 +17,24 @@
 #   t.index ["name"], name: "index_movies_on_name"
 # end
 
-5.times do |n|
-  Movie.create!(
-    name: "Movie#{n + 1}",
-    year: "200#{n + 1}",
-    description: "description#{n + 1}",
-    image_url: "url#{n + 1}",
-    is_showing: (n + 1).odd? ? true : false
-  )
+15.times do |n|
+  case n + 1
+  when 0..5
+    Sheet.create!(
+      column: n + 1,
+      row: 'a'
+    )
+  when 6..10
+    Sheet.create!(
+      column: n + 1 - 5,
+      row: 'b'
+    )
+  when 11..15
+    Sheet.create!(
+      column: n + 1 - 10,
+      row: 'c'
+    )
+  else
+    pp "予期しない"
+  end
 end

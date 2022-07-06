@@ -1,0 +1,65 @@
+<h1 class="screen_title">スクリーン１</h1>
+
+<table class="screen_table">
+  <thead>
+  <tr>
+    <th></th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    <th>5</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <% @sheets.slice(0...5).each do |sheet| %>
+      <% if sheet.id === 1 %>
+        <th>
+          <%= sheet.row.upcase %>
+        </th>
+      <% end %>
+      <td class="sheet">
+      </td>
+      <% if sheet.id === 5 %>
+        <th>
+          <%= sheet.row.upcase %>
+        </th>
+      <% end %>
+    <% end %>
+  </tr>
+  </tbody>
+  <tr>
+    <% @sheets.slice(5...10).each do |sheet| %>
+      <% if sheet.id === 6 %>
+        <th>
+          <%= sheet.row.upcase %>
+        </th>
+      <% end %>
+      <td class="sheet">
+      </td>
+      <% if sheet.id === 10 %>
+        <th>
+          <%= sheet.row.upcase %>
+        </th>
+      <% end %>
+    <% end %>
+  </tr>
+  <tr>
+    <% @sheets.slice(10...15).each do |sheet| %>
+      <% if sheet.id === 11 %>
+        <th>
+          <%= sheet.row.upcase %>
+        </th>
+      <% end %>
+      <td class="sheet">
+      </td>
+      <% if sheet.id === 15 %>
+        <th>
+          <%= sheet.row.upcase %>
+        </th>
+      <% end %>
+    <% end %>
+  </tr>
+</table>
