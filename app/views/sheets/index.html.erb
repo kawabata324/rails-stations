@@ -16,7 +16,7 @@
       <tr>
         <th><%= sheet.row.upcase %></th>
     <% end %>
-    <td><%= sheet.id %></td>
+    <td class="sheet"><%= sheet.row %>-<%= sheet.column %></td>
     <% if n % 5 === 0 %>
       <th><%= sheet.row.upcase %></th>
       </tr>
