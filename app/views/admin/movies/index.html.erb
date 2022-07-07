@@ -1,6 +1,6 @@
 <%= render 'admin/movies/header' %>
 <div class="admin__layout">
-<%= render 'admin/movies/side' %>
+  <%= render 'admin/movies/side' %>
   <div class="content">
     <h1>映画一覧</h1>
     <% flash.each do |message_type, message| %>
@@ -22,12 +22,12 @@
       <tbody>
       <% @movies.each do |movie| %>
         <tr>
-          <td><%= link_to( movie.id, "/admin/movies/#{movie.id}/edit") %></td>
+          <td><%= link_to(movie.id, "/admin/movies/#{movie.id}/edit") %></td>
           <td><%= movie.name %></td>
           <td><%= movie.year %></td>
           <td><%= movie.is_showing === true ? "上映中" : "上映予定" %></td>
           <td><%= movie.description %></td>
-          <td><%= link_to(movie.image_url, movie.image_url) %></td>
+          <td><%= image_tag movie.image_url, class: "image" %></td>
           <td><%= movie.created_at.in_time_zone('Tokyo').to_s.slice(0, 20) %></td>
           <td><%= movie.updated_at.in_time_zone('Tokyo').to_s.slice(0, 20) %></td>
         </tr>
