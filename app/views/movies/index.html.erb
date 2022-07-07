@@ -22,7 +22,7 @@
   <% @movies.each do |movie| %>
     <div class="card">
       <div>
-        <%= image_tag(movie.image_url) %>
+        <%= image_tag("#{movie.image_url}") %>
       </div>
       <div class="card__textbox">
         <div class="card__titletext">
