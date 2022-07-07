@@ -62,3 +62,52 @@
 .radio_show{
   margin: 20px;
 }
+
+.half_grid{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 30px;
+  height: 300px;
+}
+
+.image{
+  width: 400px;
+  height: 100%;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 50px;
+}
+
+.is_show_button{
+  background-color: orange;
+  padding: 15px;
+  color: white;
+}
+
+.background_gray{
+  background-color: lightgrey;
+}
+
+.content_movie{
+  width: 400px;
+}
+.year_field{
+  overflow-wrap: break-word;
+  color: darkgray;
+  text-align: center;
+
+}
+.description{
+  height: 200px;
+  overflow-wrap: break-word;
+  color: darkgray;
+}
+
+.schedule_title{
+  text-align: center;
+}

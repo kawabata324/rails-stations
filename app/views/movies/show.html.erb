@@ -1,0 +1,19 @@
+<div class="">
+  <div class="half_grid">
+    <div>
+      <%= image_tag @movie.image_url, class: "image"%>
+    </div>
+    <div class="content_movie">
+      <div class="flex background_gray">
+        <p class="is_show_button"><%= (@movie.is_showing) ? "公開中" : "未公開" %></p>
+        <h1><%= @movie.name %></h1>
+      </div>
+      <p class="background_gray year_field"><%= @movie.year %></p>
+      <p class="background_gray description"><%= @movie.description %></p>
+    </div>
+  </div>
+
+  <div class="schedule_title">
+    <h1 >上映スケジュール</h1>
+  </div>
+</div>
