@@ -1,0 +1,55 @@
+<%= render 'admin/schedules/header' %>
+<div class="admin__layout">
+  <%= render 'admin/schedules/side' %>
+  <div class="content">
+    <div class="content">
+      <h1>スケジュール情報更新</h1>
+      <%= form_with scope: :schedule, url: admin_schedule_path, local: true, class: "form", method: :put do |f| %>
+        <% flash.each do |message_type, message| %>
+          <%= message %>
+        <% end %>
+        <div class="form_elements">
+          <!-- 映画ID movie_id-->
+          <div class="form_element">
+            <%= f.label :movie_id, "上映映画ID" %>
+            <div class="width__eight">
+              <%= f.text_field :movie_id, class: "input", disabled: true %>
+              <% @schedule.errors.full_messages_for(:movie_id).each do |message| %>
+                <div class="error_message"><%= message %></div>
+              <% end %>
+            </div>
+          </div>
+          <!-- 上映開始時間 start_time-->
+          <div class="form_element">
+            <%= f.label :start_time, "上映開始時間" %>
+            <div class="width__eight">
+              <%= f.text_field :start_time, class: "input" %>
+              <% @schedule.errors.full_messages_for(:start_time).each do |message| %>
+                <div class="error_message"><%= message %></div>
+              <% end %>
+            </div>
+          </div>
+          <!--上映終了時間-->
+          <div class="form_element">
+            <%= f.label :end_time, "上映終了時間" %>
+            <div class="width__eight">
+              <%= f.text_field :end_time, class: "input" %>
+              <% @schedule.errors.full_messages_for(:end_time).each do |message| %>
+                <div class="error_message"><%= message %></div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        </div>
+        <!--ボタン関連-->
+        <div class="btn_element">
+          <%= link_to "Delete", admin_schedule_path(@schedule.id), method: :delete,
+                      data: { confirm: "【確認】削除してもよろしいですか？" },
+                      class: "delete_btn" %>
+          <%= f.button "Close", class: "cancel_btn" %>
+          <%= f.submit "Save Changes", class: "save_btn" %>
+        </div>
+      <% end %>
+      </div>
+</div>
+</div>
