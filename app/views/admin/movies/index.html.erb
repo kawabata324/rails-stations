@@ -26,7 +26,7 @@
           <td><%= movie.name %></td>
           <td><%= movie.year %></td>
           <td><%= movie.is_showing === true ? "上映中" : "上映予定" %></td>
-          <td><%= movie.description.slice(0, 9) + "..." %></td>
+          <td><%= movie.description %></td>
           <td><%= link_to(movie.image_url, movie.image_url) %></td>
           <td><%= movie.created_at.in_time_zone('Tokyo').to_s.slice(0, 20) %></td>
           <td><%= movie.updated_at.in_time_zone('Tokyo').to_s.slice(0, 20) %></td>
