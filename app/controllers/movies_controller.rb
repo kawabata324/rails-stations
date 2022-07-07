@@ -1,10 +1,10 @@
 class MoviesController < ApplicationController
   def index
     @movies = if movie_params[:keyword].present?
-      Movie.where("name LIKE ?", "%#{movie_params[:keyword]}%") | Movie.where("description LIKE ?", "%#{movie_params[:keyword]}%")
-    else
-      Movie.all
-    end
+                Movie.where("name LIKE ?", "%#{movie_params[:keyword]}%") | Movie.where("description LIKE ?", "%#{movie_params[:keyword]}%")
+              else
+                Movie.all
+              end
 
     case movie_params[:is_show_type]
     in "ALL"
@@ -20,6 +20,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    @schedules = Schedule.where(movie_id: @movie.id)
   end
 
   private

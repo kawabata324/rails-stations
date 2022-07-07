@@ -17,24 +17,34 @@
 #   t.index ["name"], name: "index_movies_on_name"
 # end
 
-15.times do |n|
-  case n + 1
-  when 0..5
-    Sheet.create!(
-      column: n + 1,
-      row: 'a'
-    )
-  when 6..10
-    Sheet.create!(
-      column: n + 1 - 5,
-      row: 'b'
-    )
-  when 11..15
-    Sheet.create!(
-      column: n + 1 - 10,
-      row: 'c'
-    )
-  else
-    pp "予期しない"
-  end
-end
+# movie = Movie.find(23)
+# 5.times do |n|
+#   Schedule.create!(
+#     movie_id: movie.id,
+#     start_time: Time.zone.local(2022, 7, n + 1, 13, 20, 0),
+#     end_time: Time.zone.local(2022, 7, n + 1, 15, 20, 0),
+#   )
+# end
+#
+# p "スケジュール作成完了"
+# 15.times do |n|
+#   case n + 1
+#   when 0..5
+#     Sheet.create!(
+#       column: n + 1,
+#       row: 'a'
+#     )
+#   when 6..10
+#     Sheet.create!(
+#       column: n + 1 - 5,
+#       row: 'b'
+#     )
+#   when 11..15
+#     Sheet.create!(
+#       column: n + 1 - 10,
+#       row: 'c'
+#     )
+#   else
+#     pp "予期しない"
+#   end
+# end
