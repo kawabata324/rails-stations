@@ -21,6 +21,7 @@ class MoviesController < ApplicationController
   def show
     @movie = Movie.find(params[:id])
     @schedules = Schedule.where(movie_id: @movie.id)
+    @a_week_target_schedule = @schedules.where("end_time < ?", 1.week.since)
   end
 
   private
