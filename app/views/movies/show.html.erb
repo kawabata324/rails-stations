@@ -23,20 +23,19 @@
     <% end %>
   <% end %>
 
-  <% if @a_week_target_schedule.length != 0 %>
-    <select name="" id="">
-      <% @a_week_target_schedule.each do |schedule| %>
-        <option value=""><%= schedule.start_time.strftime("%Y年%m月%d日") %></option>
+  <div class="sheet_reservation">
+    <%= form_with url: movie_reservation_index_path(@movie.id), local: true, method: :get, class: "form" do |f| %>
+      <% if @a_week_target_schedule.length != 0 %>
+        <% select_date = @a_week_target_schedule.map do |schedule|
+          schedule.start_time.strftime("%Y年%m月%d日")
+        end %>
+        <%= f.select :date, select_date %>
+        <% select_time = @a_week_target_schedule.map do |schedule|
+          "#{schedule.start_time.strftime("%H:%M")} - #{schedule.end_time.strftime("%H:%M")}"
+        end %>
+        <%= f.select :date, select_time %>
+        <%= f.submit "座席を予約する", class: "save_btn" %>
       <% end %>
-    </select>
-  <% end %>
-
-  <% if @a_week_target_schedule.length != 0 %>
-    <select name="" id="">
-      <% @a_week_target_schedule.each do |schedule| %>
-        <option value=""><%= schedule.start_time.strftime("%H:%M") %>
-          -  <%= schedule.end_time.strftime("%H:%M") %></option>
-      <% end %>
-    </select>
-  <% end %>
+    <% end %>
+  </div>
 </div>
